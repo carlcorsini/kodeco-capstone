@@ -14,6 +14,10 @@
 		A2D7A5082C473D4F00B00E50 /* FindMyRadioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7A5072C473D4F00B00E50 /* FindMyRadioTests.swift */; };
 		A2D7A5122C473D4F00B00E50 /* FindMyRadioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7A5112C473D4F00B00E50 /* FindMyRadioUITests.swift */; };
 		A2D7A5142C473D4F00B00E50 /* FindMyRadioUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7A5132C473D4F00B00E50 /* FindMyRadioUITestsLaunchTests.swift */; };
+		A2D7A5222C473EE600B00E50 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7A5212C473EE600B00E50 /* LocationManager.swift */; };
+		A2D7A5242C473F0600B00E50 /* MapKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7A5232C473F0600B00E50 /* MapKitView.swift */; };
+		A2D7A5262C4A7A2D00B00E50 /* RadioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7A5252C4A7A2D00B00E50 /* RadioModel.swift */; };
+		A2D7A5282C4A7D9D00B00E50 /* AVPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7A5272C4A7D9D00B00E50 /* AVPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,11 @@
 		A2D7A50D2C473D4F00B00E50 /* FindMyRadioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindMyRadioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2D7A5112C473D4F00B00E50 /* FindMyRadioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindMyRadioUITests.swift; sourceTree = "<group>"; };
 		A2D7A5132C473D4F00B00E50 /* FindMyRadioUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindMyRadioUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A2D7A5202C473E8E00B00E50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A2D7A5212C473EE600B00E50 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		A2D7A5232C473F0600B00E50 /* MapKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitView.swift; sourceTree = "<group>"; };
+		A2D7A5252C4A7A2D00B00E50 /* RadioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioModel.swift; sourceTree = "<group>"; };
+		A2D7A5272C4A7D9D00B00E50 /* AVPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +103,13 @@
 		A2D7A4F52C473D4D00B00E50 /* FindMyRadio */ = {
 			isa = PBXGroup;
 			children = (
+				A2D7A5202C473E8E00B00E50 /* Info.plist */,
 				A2D7A4F62C473D4D00B00E50 /* FindMyRadioApp.swift */,
 				A2D7A4F82C473D4D00B00E50 /* ContentView.swift */,
+				A2D7A5272C4A7D9D00B00E50 /* AVPlayer.swift */,
+				A2D7A5212C473EE600B00E50 /* LocationManager.swift */,
+				A2D7A5252C4A7A2D00B00E50 /* RadioModel.swift */,
+				A2D7A5232C473F0600B00E50 /* MapKitView.swift */,
 				A2D7A4FA2C473D4F00B00E50 /* Assets.xcassets */,
 				A2D7A4FC2C473D4F00B00E50 /* Preview Content */,
 			);
@@ -257,8 +271,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2D7A5242C473F0600B00E50 /* MapKitView.swift in Sources */,
 				A2D7A4F92C473D4D00B00E50 /* ContentView.swift in Sources */,
 				A2D7A4F72C473D4D00B00E50 /* FindMyRadioApp.swift in Sources */,
+				A2D7A5262C4A7A2D00B00E50 /* RadioModel.swift in Sources */,
+				A2D7A5222C473EE600B00E50 /* LocationManager.swift in Sources */,
+				A2D7A5282C4A7D9D00B00E50 /* AVPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +442,9 @@
 				DEVELOPMENT_ASSET_PATHS = "\"FindMyRadio/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FindMyRadio/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -452,6 +473,9 @@
 				DEVELOPMENT_ASSET_PATHS = "\"FindMyRadio/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FindMyRadio/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
