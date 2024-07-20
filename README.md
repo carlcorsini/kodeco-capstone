@@ -1,7 +1,3 @@
-Sure! Here's a comprehensive README for your FindMyRadio app:
-
----
-
 # FindMyRadio
 
 FindMyRadio is a SwiftUI app that allows users to discover and listen to radio stations based on their location. The app features a map view, media player, radio station list, and a favorites section.
@@ -14,6 +10,7 @@ FindMyRadio is a SwiftUI app that allows users to discover and listen to radio s
 - [Testing](#testing)
 - [Customization](#customization)
 - [App Icon](#app-icon)
+- [Acknowledgements](#acknowledgements)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -131,6 +128,10 @@ private func mockDataFetcher(lat: Double, lon: Double) -> AnyPublisher<[RadioSta
 - **`RadioViewModel.swift`**: The view model handling radio data fetching and favorites management.
 - **`RadioStation.swift`**: The model representing a radio station.
 - **`SplashScreenView.swift`**: The splash screen view displayed on app launch.
+
+## Acknowledgements
+
+- **Radio Browser API**: This app uses the [Radio Browser API](https://api.radio-browser.info/) to fetch data on radio stations. A big thank you to the creators of the Radio Browser API for providing this valuable service.
 
 ## Contributing
 
