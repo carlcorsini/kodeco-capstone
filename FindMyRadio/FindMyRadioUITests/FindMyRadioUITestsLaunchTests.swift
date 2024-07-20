@@ -1,15 +1,8 @@
-//
-//  FindMyRadioUITestsLaunchTests.swift
-//  FindMyRadioUITests
-//
-//  Created by Carl Corsini on 7/16/24.
-//
-
 import XCTest
 
 final class FindMyRadioUITestsLaunchTests: XCTestCase {
 
-    override class var runsForEachTargetApplicationUIConfiguration: Bool {
+    override static var runsForEachTargetApplicationUIConfiguration: Bool {
         true
     }
 
