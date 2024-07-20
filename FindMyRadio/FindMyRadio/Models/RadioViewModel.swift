@@ -9,22 +9,31 @@ class RadioViewModel: ObservableObject {
 
     private let favoritesKey = "favoriteStations"
     private var cancellables = Set<AnyCancellable>()
+    private var dataFetcher: ((Double, Double) -> AnyPublisher<[RadioStation], Error>)?
 
-    init() {
+    init(dataFetcher: ((Double, Double) -> AnyPublisher<[RadioStation], Error>)? = nil) {
+        self.dataFetcher = dataFetcher
         loadFavorites()
     }
 
     func fetchRadioData(lat: Double, lon: Double) {
         guard !isFetchingData else { return }
         isFetchingData = true
-        guard let url = URL(string: "http://localhost:8000/radio?lat=\(lat)&lon=\(lon)") else {
-            isFetchingData = false
-            return
+        let fetch: AnyPublisher<[RadioStation], Error>
+        if let dataFetcher = dataFetcher {
+            fetch = dataFetcher(lat, lon)
+        } else {
+            guard let url = URL(string: "http://localhost:8000/radio?lat=\(lat)&lon=\(lon)") else {
+                isFetchingData = false
+                return
+            }
+            fetch = URLSession.shared.dataTaskPublisher(for: url)
+                .map(\.data)
+                .decode(type: [RadioStation].self, decoder: JSONDecoder())
+                .eraseToAnyPublisher()
         }
 
-        URLSession.shared.dataTaskPublisher(for: url)
-            .map(\.data)
-            .decode(type: [RadioStation].self, decoder: JSONDecoder())
+        fetch
             .replaceError(with: [])
             .receive(on: DispatchQueue.main)
             .sink { [weak self] newStations in
@@ -48,13 +57,13 @@ class RadioViewModel: ObservableObject {
         return favorites.contains(where: { $0.stationuuid == station.stationuuid })
     }
 
-    private func saveFavorites() {
+    func saveFavorites() {
         if let encoded = try? JSONEncoder().encode(favorites) {
             UserDefaults.standard.set(encoded, forKey: favoritesKey)
         }
     }
 
-    private func loadFavorites() {
+    func loadFavorites() {
         if let data = UserDefaults.standard.data(forKey: favoritesKey),
            let savedFavorites = try? JSONDecoder().decode([RadioStation].self, from: data) {
             favorites = savedFavorites.unique()

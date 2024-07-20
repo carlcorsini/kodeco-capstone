@@ -13,7 +13,6 @@ struct SettingsView: View {
                     }
                 }
             }
-            .navigationTitle("Favorites")
             .overlay {
                 if viewModel.isFetchingData {
                     LoadingView()

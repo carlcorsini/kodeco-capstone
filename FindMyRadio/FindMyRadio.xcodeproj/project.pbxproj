@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A2AE0F952C4B4DF600FA8D34 /* FetchRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AE0F942C4B4DF600FA8D34 /* FetchRadioButton.swift */; };
+		A2AE0FA02C4B625100FA8D34 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AE0F9F2C4B625100FA8D34 /* MockNetworkManager.swift */; };
+		A2AE0FA22C4B63B700FA8D34 /* RadioViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AE0FA12C4B63B700FA8D34 /* RadioViewModelTests.swift */; };
+		A2AE0FA42C4B67C300FA8D34 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AE0FA32C4B67C300FA8D34 /* SplashScreen.swift */; };
 		A2D7A4F72C473D4D00B00E50 /* FindMyRadioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7A4F62C473D4D00B00E50 /* FindMyRadioApp.swift */; };
 		A2D7A4F92C473D4D00B00E50 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7A4F82C473D4D00B00E50 /* ContentView.swift */; };
 		A2D7A4FB2C473D4F00B00E50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2D7A4FA2C473D4F00B00E50 /* Assets.xcassets */; };
@@ -47,6 +50,9 @@
 
 /* Begin PBXFileReference section */
 		A2AE0F942C4B4DF600FA8D34 /* FetchRadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRadioButton.swift; sourceTree = "<group>"; };
+		A2AE0F9F2C4B625100FA8D34 /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
+		A2AE0FA12C4B63B700FA8D34 /* RadioViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioViewModelTests.swift; sourceTree = "<group>"; };
+		A2AE0FA32C4B67C300FA8D34 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		A2D7A4F32C473D4D00B00E50 /* FindMyRadio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindMyRadio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2D7A4F62C473D4D00B00E50 /* FindMyRadioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindMyRadioApp.swift; sourceTree = "<group>"; };
 		A2D7A4F82C473D4D00B00E50 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -126,6 +132,7 @@
 				A2D7A5372C4B473500B00E50 /* Views */,
 				A2D7A4FA2C473D4F00B00E50 /* Assets.xcassets */,
 				A2D7A4FC2C473D4F00B00E50 /* Preview Content */,
+				A2AE0F9F2C4B625100FA8D34 /* MockNetworkManager.swift */,
 			);
 			path = FindMyRadio;
 			sourceTree = "<group>";
@@ -142,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				A2D7A5072C473D4F00B00E50 /* FindMyRadioTests.swift */,
+				A2AE0FA12C4B63B700FA8D34 /* RadioViewModelTests.swift */,
 			);
 			path = FindMyRadioTests;
 			sourceTree = "<group>";
@@ -167,6 +175,7 @@
 				A2D7A5232C473F0600B00E50 /* MapKitView.swift */,
 				A2D7A5352C4B3E8B00B00E50 /* RadioDetailView.swift */,
 				A2D7A52F2C4B189C00B00E50 /* ListView.swift */,
+				A2AE0FA32C4B67C300FA8D34 /* SplashScreen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -341,7 +350,9 @@
 				A2D7A5302C4B189C00B00E50 /* ListView.swift in Sources */,
 				A2D7A5262C4A7A2D00B00E50 /* RadioModel.swift in Sources */,
 				A2D7A52C2C4B114900B00E50 /* RadioListView.swift in Sources */,
+				A2AE0FA42C4B67C300FA8D34 /* SplashScreen.swift in Sources */,
 				A2D7A5362C4B3E8B00B00E50 /* RadioDetailView.swift in Sources */,
+				A2AE0FA02C4B625100FA8D34 /* MockNetworkManager.swift in Sources */,
 				A2D7A52A2C4B0F8B00B00E50 /* RadioViewModel.swift in Sources */,
 				A2D7A5222C473EE600B00E50 /* LocationManager.swift in Sources */,
 				A2D7A52E2C4B188D00B00E50 /* MediaPlayerView.swift in Sources */,
@@ -354,6 +365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2AE0FA22C4B63B700FA8D34 /* RadioViewModelTests.swift in Sources */,
 				A2D7A5082C473D4F00B00E50 /* FindMyRadioTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,6 +519,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FindMyRadio/Preview Content\"";
@@ -538,6 +551,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FindMyRadio/Preview Content\"";
@@ -612,6 +626,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.cc.FindMyRadioUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -629,6 +647,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.cc.FindMyRadioUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

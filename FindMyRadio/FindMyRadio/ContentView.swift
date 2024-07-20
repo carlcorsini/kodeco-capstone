@@ -12,11 +12,13 @@ struct ContentView: View {
             VStack(spacing: 0) {
                 GeometryReader { _ in
                     MapView(locationManager: locationManager)
-                        .edgesIgnoringSafeArea(.top)
+                    .accessibilityIdentifier("MapView")
+                    .edgesIgnoringSafeArea(.all)
                 }
                 .frame(height: UIScreen.main.bounds.height / 4)
 
                 MediaPlayerView(audioPlayerViewModel: audioPlayerViewModel)
+                    .accessibilityIdentifier("MediaPlayerView")
                     .frame(height: 80)
                     .background(Color.gray.opacity(0.2))
 

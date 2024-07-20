@@ -35,6 +35,7 @@ struct ListView: View {
                 .cornerRadius(10)
         }
         .padding()
+        .accessibilityIdentifier("FindRadioStationsButton")
     }
 
     private var loadingIndicator: some View {
