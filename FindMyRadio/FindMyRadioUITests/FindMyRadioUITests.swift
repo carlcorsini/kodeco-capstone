@@ -12,6 +12,5 @@ class FindMyRadioUITests: XCTestCase {
   }
   func testExample() throws {
     // Ensure the app is not nil before using it
-    // UI test example
   }
 }
