@@ -109,22 +109,6 @@ private func mockDataFetcher(lat: Double, lon: Double) -> AnyPublisher<[RadioSta
 }
 ```
 
-## Customization
-
-### Splash Screen
-
-- **Location**: `SplashScreenView.swift`
-- **Description**: Customize the splash screen with your app's logo and desired animations.
-
-### App Icon
-
-- **Creating an Icon**: Design an app icon (1024x1024) using a graphic design tool.
-- **Generating Sizes**: Use [App Icon Generator](https://appicon.co/) to create all required icon sizes.
-- **Adding to Xcode**:
-    1. Open `Assets.xcassets` in Xcode.
-    2. Create a new `AppIcon` set.
-    3. Drag and drop the generated icons into the appropriate slots.
-
 ### Project Structure
 
 - **`FindMyRadioApp.swift`**: The main entry point of the app.
