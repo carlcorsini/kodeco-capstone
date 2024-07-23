@@ -7,7 +7,7 @@ struct SettingsView: View {
     NavigationView {
       List {
         ForEach(viewModel.favorites, id: \.stationuuid) { radioData in
-          NavigationLink(destination: RadioDetailView(radioStation: radioData)) {
+          NavigationLink(destination: RadioDetailView(viewModel: RadioDetailViewModel(radioStation: radioData))) {
             RadioRow(radioData: radioData, audioPlayerViewModel: audioPlayerViewModel, viewModel: viewModel)
           }
         }
@@ -20,11 +20,11 @@ struct SettingsView: View {
     }
   }
 }
-
 struct RadioRow: View {
   let radioData: RadioStation
   @ObservedObject var audioPlayerViewModel: AudioPlayerViewModel
   @ObservedObject var viewModel: RadioViewModel
+
   var body: some View {
     HStack {
       if let faviconURL = radioData.favicon, let url = URL(string: faviconURL) {
@@ -66,6 +66,7 @@ struct RadioRow: View {
             .foregroundColor(.blue)
         })
         .buttonStyle(PlainButtonStyle())
+
         Button(action: {
           print("Stop button tapped")
           audioPlayerViewModel.stopStream()
@@ -74,11 +75,12 @@ struct RadioRow: View {
             .foregroundColor(.red)
         })
         .buttonStyle(PlainButtonStyle())
+
         Button(action: {
           viewModel.toggleFavorite(station: radioData)
         }, label: {
           Image(systemName: viewModel.isFavorite(station: radioData) ? "heart.fill" : "heart")
-            .foregroundColor(viewModel.isFavorite(station: radioData) ? .yellow : .gray)
+            .foregroundColor(viewModel.isFavorite(station: radioData) ? .red : .gray)
         })
         .buttonStyle(PlainButtonStyle())
       }

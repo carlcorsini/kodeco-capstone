@@ -16,13 +16,14 @@ struct FetchRadioButton: View {
         completion(true)
       },
       label: {
-        Text("Fetch Radio Data")
+        Text("Find Radio Stations")
           .padding()
           .background(Color.blue)
           .foregroundColor(.white)
           .cornerRadius(10)
       }
     )
+    .accessibility(identifier: "FetchRadioButton")
     .shadow(radius: 5)
     .padding()
   }

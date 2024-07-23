@@ -4,11 +4,12 @@ struct RadioListView: View {
   @ObservedObject var locationManager: LocationManager
   @ObservedObject var viewModel: RadioViewModel
   @ObservedObject var audioPlayerViewModel: AudioPlayerViewModel
+
   var body: some View {
     NavigationView {
       List {
         ForEach(viewModel.radioData, id: \.stationuuid) { radioData in
-          NavigationLink(destination: RadioDetailView(radioStation: radioData)) {
+          NavigationLink(destination: RadioDetailView(viewModel: RadioDetailViewModel(radioStation: radioData))) {
             HStack {
               if let faviconURL = radioData.favicon, let url = URL(string: faviconURL) {
                 AsyncImage(url: url) { phase in
@@ -39,44 +40,32 @@ struct RadioListView: View {
               }
               Spacer()
               HStack {
-                Button(
-                  action: {
-                    print("Play button tapped")
-                    if let url = radioData.url_resolved {
-                      audioPlayerViewModel.playStream(url: url, station: radioData)
-                    }
-                  },
-                  label: {
-                    Image(systemName: "play.fill")
-                      .foregroundColor(.blue)
+                Button(action: {
+                  print("Play button tapped")
+                  if let url = radioData.url_resolved {
+                    audioPlayerViewModel.playStream(url: url, station: radioData)
                   }
-                )
+                }, label: {
+                  Image(systemName: "play.fill")
+                    .foregroundColor(.blue)
+                })
                 .buttonStyle(PlainButtonStyle())
-                Button(
-                  action: {
-                    print("Stop button tapped")
-                    audioPlayerViewModel.stopStream()
-                  },
-                  label: {
-                    Image(systemName: "stop.fill")
-                      .foregroundColor(.red)
-                  }
-                )
+
+                Button(action: {
+                  print("Stop button tapped")
+                  audioPlayerViewModel.stopStream()
+                }, label: {
+                  Image(systemName: "stop.fill")
+                    .foregroundColor(.red)
+                })
                 .buttonStyle(PlainButtonStyle())
-                Button(
-                  action: {
-                    viewModel.toggleFavorite(station: radioData)
-                  },
-                  label: {
-                    Image(
-                      systemName:
-                        viewModel.isFavorite(station: radioData) ? "heart.fill" : "heart"
-                    )
-                    .foregroundColor(
-                      viewModel.isFavorite(station: radioData) ? .yellow : .gray
-                    )
-                  }
-                )
+
+                Button(action: {
+                  viewModel.toggleFavorite(station: radioData)
+                }, label: {
+                  Image(systemName: viewModel.isFavorite(station: radioData) ? "heart.fill" : "heart")
+                    .foregroundColor(viewModel.isFavorite(station: radioData) ? .red : .gray)
+                })
                 .buttonStyle(PlainButtonStyle())
               }
               .padding(.leading, 10)
@@ -87,10 +76,7 @@ struct RadioListView: View {
       }
       .refreshable {
         if let location = locationManager.userLocation {
-          viewModel.fetchRadioData(
-            lat: location.coordinate.latitude,
-            lon: location.coordinate.longitude
-          )
+          viewModel.fetchRadioData(lat: location.coordinate.latitude, lon: location.coordinate.longitude)
         } else {
           print("User location is not available")
         }
