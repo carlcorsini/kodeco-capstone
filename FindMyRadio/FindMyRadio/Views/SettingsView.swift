@@ -4,11 +4,20 @@ struct SettingsView: View {
   @ObservedObject var viewModel: RadioViewModel
   @ObservedObject var audioPlayerViewModel: AudioPlayerViewModel
   var body: some View {
-    NavigationView {
-      List {
-        ForEach(viewModel.favorites, id: \.stationuuid) { radioData in
-          NavigationLink(destination: RadioDetailView(viewModel: RadioDetailViewModel(radioStation: radioData))) {
-            RadioRow(radioData: radioData, audioPlayerViewModel: audioPlayerViewModel, viewModel: viewModel)
+    NavigationStack {
+      Group {
+        if viewModel.favorites.isEmpty {
+          Text("No favorites")
+            .font(.title)
+            .foregroundColor(.gray)
+            .padding()
+        } else {
+          List {
+            ForEach(viewModel.favorites, id: \.stationuuid) { radioData in
+              NavigationLink(destination: RadioDetailView(viewModel: RadioDetailViewModel(radioStation: radioData))) {
+                RadioRow(radioData: radioData, audioPlayerViewModel: audioPlayerViewModel, viewModel: viewModel)
+              }
+            }
           }
         }
       }
@@ -17,6 +26,7 @@ struct SettingsView: View {
           LoadingView()
         }
       }
+      .navigationTitle("Favorites")
     }
   }
 }
@@ -50,6 +60,7 @@ struct RadioRow: View {
           .resizable()
           .frame(width: 50, height: 50)
       }
+
       VStack(alignment: .leading) {
         Text(radioData.name ?? "Unknown")
           .font(.headline)
