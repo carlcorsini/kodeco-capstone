@@ -2,6 +2,10 @@
 
 FindMyRadio is a SwiftUI app that allows users to discover and listen to radio stations based on their location. The app features a map view, media player, radio station list, and a favorites section.
 
+# Important Note:
+This app runs on a server created by me and is hosted on a free service at render.com. This means the server will automatically shut down for inactivity and may take up to 1 minute to boot back up on a new server request. Before using the app enter this url into your browser to ping the server to wake up and wait one minute: https://radio-srvr.onrender.com/radio?lat=50.00?long=50.00
+
+
 ## Table of Contents
 
 - [Features](#features)
