@@ -9,7 +9,7 @@ protocol NetworkManagerProtocol {
 // Implement the real network manager
 class RealNetworkManager: NetworkManagerProtocol {
   func fetchRadioData(lat: Double, lon: Double) -> AnyPublisher<[RadioStation], Error> {
-    guard let url = URL(string: "http://localhost:8000/radio?lat=\(lat)&lon=\(lon)") else {
+    guard let url = URL(string: "https://radio-srvr.onrender.com/radio?lat=\(lat)&lon=\(lon)") else {
       return Fail(error: URLError(.badURL)).eraseToAnyPublisher()
     }
     return URLSession.shared.dataTaskPublisher(for: url)

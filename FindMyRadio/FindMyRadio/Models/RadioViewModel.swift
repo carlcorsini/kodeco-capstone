@@ -20,7 +20,7 @@ class RadioViewModel: ObservableObject {
     if let dataFetcher = dataFetcher {
       fetch = dataFetcher(lat, lon)
     } else {
-      guard let url = URL(string: "http://localhost:8000/radio?lat=\(lat)&lon=\(lon)") else {
+      guard let url = URL(string: "https://radio-srvr.onrender.com/radio?lat=\(lat)&lon=\(lon)") else {
         isFetchingData = false
         return
       }

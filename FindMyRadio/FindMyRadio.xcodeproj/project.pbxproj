@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A201CD342C50473E00DAD6CC /* RadioDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A201CD332C50473E00DAD6CC /* RadioDetailViewModel.swift */; };
 		A2AE0F952C4B4DF600FA8D34 /* FetchRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AE0F942C4B4DF600FA8D34 /* FetchRadioButton.swift */; };
 		A2AE0FA02C4B625100FA8D34 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AE0F9F2C4B625100FA8D34 /* MockNetworkManager.swift */; };
 		A2AE0FA22C4B63B700FA8D34 /* RadioViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AE0FA12C4B63B700FA8D34 /* RadioViewModelTests.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A201CD332C50473E00DAD6CC /* RadioDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioDetailViewModel.swift; sourceTree = "<group>"; };
 		A2AE0F942C4B4DF600FA8D34 /* FetchRadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRadioButton.swift; sourceTree = "<group>"; };
 		A2AE0F9F2C4B625100FA8D34 /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
 		A2AE0FA12C4B63B700FA8D34 /* RadioViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioViewModelTests.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				A2D7A5212C473EE600B00E50 /* LocationManager.swift */,
 				A2D7A5252C4A7A2D00B00E50 /* RadioModel.swift */,
 				A2D7A5292C4B0F8B00B00E50 /* RadioViewModel.swift */,
+				A201CD332C50473E00DAD6CC /* RadioDetailViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		A2D7A5392C4B486900B00E50 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -332,8 +336,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "
-";
+			shellScript = "PATH=/opt/homebrew/bin:$PATH\nif [ -f ~/com.raywenderlich.swiftlint.yml ]; then\n  if which swiftlint >/dev/null; then\n    swiftlint --no-cache --config ~/com.raywenderlich.swiftlint.yml\n  fi\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -351,6 +354,7 @@
 				A2D7A5262C4A7A2D00B00E50 /* RadioModel.swift in Sources */,
 				A2D7A52C2C4B114900B00E50 /* RadioListView.swift in Sources */,
 				A2AE0FA42C4B67C300FA8D34 /* SplashScreen.swift in Sources */,
+				A201CD342C50473E00DAD6CC /* RadioDetailViewModel.swift in Sources */,
 				A2D7A5362C4B3E8B00B00E50 /* RadioDetailView.swift in Sources */,
 				A2AE0FA02C4B625100FA8D34 /* MockNetworkManager.swift in Sources */,
 				A2D7A52A2C4B0F8B00B00E50 /* RadioViewModel.swift in Sources */,
@@ -432,7 +436,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -495,7 +499,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

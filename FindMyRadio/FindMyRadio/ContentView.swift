@@ -6,9 +6,8 @@ struct ContentView: View {
   @StateObject private var radioViewModel = RadioViewModel()
   @StateObject private var audioPlayerViewModel = AudioPlayerViewModel()
   @State private var showList = false
-
   var body: some View {
-    NavigationView {
+    NavigationStack {
       VStack(spacing: 0) {
         GeometryReader { _ in
           MapView(locationManager: locationManager)
@@ -16,23 +15,22 @@ struct ContentView: View {
             .edgesIgnoringSafeArea(.all)
         }
         .frame(height: UIScreen.main.bounds.height / 4)
-
         MediaPlayerView(audioPlayerViewModel: audioPlayerViewModel)
           .accessibilityIdentifier("MediaPlayerView")
           .frame(height: 80)
           .background(Color.gray.opacity(0.2))
-
         TabView {
-          ListView(
-            locationManager: locationManager,
-            radioViewModel: radioViewModel,
-            audioPlayerViewModel: audioPlayerViewModel,
-            showList: $showList
-          )
+          NavigationStack {
+            ListView(
+              locationManager: locationManager,
+              radioViewModel: radioViewModel,
+              audioPlayerViewModel: audioPlayerViewModel,
+              showList: $showList
+            )
+          }
           .tabItem {
             Label("Home", systemImage: "house")
           }
-
           NavigationStack {
             SettingsView(
               viewModel: radioViewModel,

@@ -8,6 +8,7 @@ struct RadioStation: Codable, Identifiable, Equatable {
   let name: String?
   let url: String?
   let url_resolved: String?
+  let homepage: String?
   let country: String?
   let countrycode: String?
   let state: String?
@@ -23,8 +24,6 @@ struct RadioStation: Codable, Identifiable, Equatable {
   let lastcheckoktime_iso8601: String?
   let lastlocalchecktime: String?
   let lastlocalchecktime_iso8601: String?
-  let clicktimestamp: String?
-  let clicktimestamp_iso8601: String?
   let ssl_error: Int?
   let geo_lat: Double?
   let geo_long: Double?
